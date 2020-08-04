@@ -1,0 +1,46 @@
+.navcontainer {
+  margin: 0;
+  padding: 0;
+  width: 30%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(34, 124, 157, 0.9);
+  color: #fef9ef;
+  text-align: center;
+
+  @media screen and (max-width: 700px) {
+  .navcontainer {
+    width: 100%;
+    height: auto;
+    // position: relative;
+  }
+  .sidebar a {float: left;}
+  
+}
+}
+.navcontainer a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+.navcontainer a {
+  display: block;
+  color: #fef9ef;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.navcontainer a.active {
+  background-color: #17c3b2;
+  color: white;
+  
+}
+.text {
+  line-height: 1rem;
+  padding-bottom: 2rem;
+}
+.logo {
+  border-radius: 100%;
+  margin-top: 4rem;
+}
+
