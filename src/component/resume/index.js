@@ -1,19 +1,27 @@
 import React from "react";
-import Work from "./WorkExpr";
-import Ed from "./Education";
-import Project from "./Project";
-import Title from "./TopBar";
-import "./index.scss";
+import './index.scss'
 
-const Index = () => {
-  return (
-    <div className="container">
-      <Title />
-      <Work />
-      <Ed />
-      <Project />
-    </div>
-  );
-};
+export default class PDFViewer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.viewerRef = React.createRef();
+    this.backend = new props.backend();
+  }
 
-export default Index;
+  componentDidMount() {
+    const { src } = this.props;
+    const element = this.viewerRef.current;
+
+    this.backend.init(src, element);
+  }
+
+  render() {
+    return (
+      <div
+        ref={this.viewerRef}
+        id="viewer"
+        style={{ width: "100%", height: "100%" }}
+      ></div>
+    );
+  }
+}
